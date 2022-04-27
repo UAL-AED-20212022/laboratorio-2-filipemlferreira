@@ -1,17 +1,13 @@
 import controller
 from models.LinkedList import LinkedList
 
-
 lista_paises = LinkedList()
-
 
 def main():
   
   while True:
-    
-    
+        
     instrucao = input().split(" ")
-
 
     if instrucao[0] == "RPI":
       pais_novo = instrucao[1]
@@ -35,7 +31,7 @@ def main():
 
     if instrucao[0] == "VNE":
       VNE(lista_paises)
-      print(f"O número de elementos são {len(lista_paises)}")
+      print(f"O número de elementos são {VNE(lista_paises)}")
     
     if instrucao[0] == "VP":
       pais_novo = instrucao[1]
@@ -52,7 +48,6 @@ def main():
       EUE(lista_paises)
       print(f"O país {EUE(lista_paises)} foi eliminado da lista.")
 
-
     if instrucao[0] == "EP":
       pais_eliminado = instrucao[1]
       if EP(lista_paises) == True:
@@ -60,17 +55,9 @@ def main():
       else:
         print(f"O país {pais_eliminado} não se encontra na lista.")
 
-
-
-
-
-
-
-
 def RPI(lista_paises, nome_pais):
   controller.registar_nome_pais_inicio(lista_paises, nome_pais)
   return lista_paises.traverse_list()
-
 
 def RPF(lista_paises, nome_pais):
   controller.registar_nome_pais_fim(lista_paises, nome_pais)
