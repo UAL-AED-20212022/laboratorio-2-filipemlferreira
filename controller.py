@@ -31,3 +31,15 @@ def elimina_nome_inicio(lista_paises):
     pais_numero_um = lista_paises.start_node.item
     lista_paises.delete_at_start()
     return pais_numero_um
+
+def elimina_nome_fim(lista_paises):
+    pais_fim = lista_paises.get_last_node()
+    return pais_fim
+
+def eliminar_pais_especifico(lista_paises, pais_eliminado):
+    if lista_paises.search_item(pais_eliminado) == True:
+        lista_paises.delete_element_by_value(pais_eliminado)
+        return True
+    else:
+        return False
+

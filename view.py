@@ -46,12 +46,19 @@ def main():
     
     if instrucao[0] == "EPE":
       EPE(lista_paises)
-      print(f"O país {EPE(lista_paises)} foi eliminado da lista. ")
+      print(f"O país {EPE(lista_paises)} foi eliminado da lista.")
     
     if instrucao[0] == "EUE":
       EUE(lista_paises)
-      print(f"O país {EUE(lista_paises)} foi eliminado da lista. ")
+      print(f"O país {EUE(lista_paises)} foi eliminado da lista.")
 
+
+    if instrucao[0] == "EP":
+      pais_eliminado = instrucao[1]
+      if EP(lista_paises) == True:
+        print(f"O país {pais_eliminado} foi eliminado da lista.")
+      else:
+        print(f"O país {pais_eliminado} não se encontra na lista.")
 
 
 
@@ -95,6 +102,13 @@ def EPE(lista_paises):
 
 def EUE(lista_paises):
   return controller.elimina_nome_fim(lista_paises)
+
+def EP(lista_paises, pais_eliminado):
+  if controller.eliminar_pais_especifico(pais_eliminado, lista_paises) == True:
+    return True
+  else:
+   return False
+
   
   
   
